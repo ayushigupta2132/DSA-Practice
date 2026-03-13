@@ -1,5 +1,0 @@
-Current Top: 2
-Current Min: 2
-After pop -> Min: 3
-After pop -> Top: 3
-After pop -> Min: 3

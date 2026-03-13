@@ -1,3 +1,0 @@
-Front: 10
-Front after pop: 20
-Size: 2
