@@ -1,0 +1,253 @@
+==============================
+BINARY NUMBER SYSTEM – THEORY
+==============================
+
+1. NUMBER SYSTEM BASICS
+-----------------------
+A number system defines how numbers are represented using digits.
+
+Common number systems:
+- Decimal (Base 10): digits 0–9
+- Binary (Base 2): digits 0, 1
+- Octal (Base 8): digits 0–7
+- Hexadecimal (Base 16): digits 0–9, A–F
+
+In computers, all data is represented in BINARY.
+
+--------------------------------------------------
+
+2. DECIMAL TO BINARY CONVERSION
+-------------------------------
+Method: Repeated Division by 2
+
+Steps:
+1. Divide the decimal number by 2
+2. Write the remainder (0 or 1)
+3. Divide the quotient again by 2
+4. Repeat until quotient becomes 0
+5. Binary number = remainders read from bottom to top
+
+Example:
+Decimal: 13
+
+13 / 2 = 6  remainder 1
+6  / 2 = 3  remainder 0
+3  / 2 = 1  remainder 1
+1  / 2 = 0  remainder 1
+
+Binary = 1101
+
+--------------------------------------------------
+
+3. BINARY TO DECIMAL CONVERSION
+-------------------------------
+Method: Positional Weight (Powers of 2)
+
+Each bit has a weight:
+2^0, 2^1, 2^2, 2^3, ...
+
+Example:
+Binary: 1011
+
+= 1×2^3 + 0×2^2 + 1×2^1 + 1×2^0
+= 8 + 0 + 2 + 1
+= 11 (Decimal)
+
+--------------------------------------------------
+
+4. 1’s COMPLEMENT
+-----------------
+Definition:
+1’s complement of a binary number is obtained by flipping all bits.
+
+Rule:
+0 → 1
+1 → 0
+
+Example:
+Binary: 101010
+1’s complement: 010101
+
+Use:
+- Used in number representation
+- Used in subtraction (older systems)
+
+--------------------------------------------------
+
+5. 2’s COMPLEMENT
+-----------------
+Definition:
+2’s complement is obtained by:
+1. Taking 1’s complement
+2. Adding 1 to the result
+
+Formula:
+2’s complement = (1’s complement) + 1
+
+Example:
+Binary number: 0101
+
+Step 1: 1’s complement → 1010
+Step 2: Add 1 → 1011
+
+1011 is the 2’s complement of 0101
+
+Importance:
+- Used to represent negative numbers
+- Simplifies subtraction
+- Used internally by computers
+
+Range (for n bits):
+-2^(n-1) to +2^(n-1) - 1
+
+--------------------------------------------------
+
+6. LOGICAL OPERATORS
+-------------------
+
+A. AND Operator (&)
+-------------------
+Rule:
+1 & 1 = 1
+Otherwise = 0
+
+Truth Table:
+A B | A & B
+0 0 |   0
+0 1 |   0
+1 0 |   0
+1 1 |   1
+
+Example:
+1010
+1100
+----
+1000
+
+Use:
+- Masking bits
+- Checking specific bits
+
+--------------------------------------------------
+
+B. OR Operator (|)
+------------------
+Rule:
+If any bit is 1 → result is 1
+
+Truth Table:
+A B | A | B
+0 0 |   0
+0 1 |   1
+1 0 |   1
+1 1 |   1
+
+Example:
+1010
+1100
+----
+1110
+
+Use:
+- Setting bits
+
+--------------------------------------------------
+
+C. NOT Operator (~)
+-------------------
+Rule:
+Flips all bits
+
+Truth Table:
+A | ~A
+0 |  1
+1 |  0
+
+Example:
+~1010 = 0101
+
+Note:
+Result depends on number of bits (signed/unsigned)
+
+--------------------------------------------------
+
+D. XOR Operator (^)
+-------------------
+Rule:
+Same bits → 0
+Different bits → 1
+
+Truth Table:
+A B | A ^ B
+0 0 |   0
+0 1 |   1
+1 0 |   1
+1 1 |   0
+
+Example:
+1010
+1100
+----
+0110
+
+Special Properties:
+- x ^ x = 0
+- x ^ 0 = x
+- Used in swapping numbers without temp
+
+--------------------------------------------------
+
+7. SHIFT OPERATORS
+------------------
+
+A. LEFT SHIFT (<<)
+------------------
+Definition:
+Shifts bits to the left by k positions.
+Zeros are added on the right.
+
+Effect:
+x << k = x × 2^k
+
+Example:
+x = 5 → 0101
+5 << 1 = 1010 = 10
+5 << 2 = 10100 = 20
+
+Use:
+- Fast multiplication by powers of 2
+
+--------------------------------------------------
+
+B. RIGHT SHIFT (>>)
+-------------------
+Definition:
+Shifts bits to the right by k positions.
+Rightmost bits are discarded.
+
+Effect (for positive numbers):
+x >> k = x / 2^k
+
+Example:
+x = 20 → 10100
+20 >> 1 = 01010 = 10
+20 >> 2 = 00101 = 5
+
+Note:
+- For signed numbers, sign bit handling depends on compiler
+- Arithmetic shift preserves sign bit
+
+--------------------------------------------------
+
+8. KEY EXAM POINTS
+-----------------
+- Computers use 2’s complement for signed integers
+- AND is used for masking
+- OR is used for setting bits
+- XOR is used for toggling bits
+- Left shift = multiply by 2^k
+- Right shift = divide by 2^k (positive numbers)
+
+--------------------------------------------------
+END OF NOTES
+--------------------------------------------------

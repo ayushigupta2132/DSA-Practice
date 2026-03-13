@@ -1,0 +1,129 @@
+🔹 1) Infix Notation
+Definition:
+Operator is written between operands.
+Form:
+Operand  Operator  Operand
+
+Examples:
+A + B
+A + B * C
+(A + B) * C
+
+Problem with Infix:
+Needs precedence rules and brackets to know which operation happens first.
+
+
+🔹 2) Prefix Notation (Polish Notation)
+Definition:
+Operator is written before operands.
+Form:
+Operator  Operand  Operand
+
+Examples:
++ A B
+* + A B C
+
+Advantage:
+No need of brackets, no confusion of precedence.
+
+
+🔹 3) Postfix Notation (Reverse Polish Notation)
+Definition:
+Operator is written after operands.
+Form:
+Operand  Operand  Operator
+
+Examples:
+A B +
+A B C * +
+
+Advantage:
+No brackets, easy evaluation using stack.
+
+🔹 Why Stack is Used?
+Because stack follows LIFO, which perfectly matches the need to remember previous operators and operands while converting expressions.
+
+🔹 Operator Precedence
+Operator	Precedence
+^	Highest
+* /	Medium
++ -	Lowest
+
+
+🔹 Infix → Postfix Conversion (Using Stack)
+Rules
+If operand → add to result.
+If '(' → push to stack.
+If ')' → pop from stack to result until '('.
+If operator:
+Pop from stack to result while stack top has higher or equal precedence.
+Then push current operator.
+
+✅ Example: Convert Infix to Postfix
+Infix Expression:
+A + B * C
+
+Symbol	Stack	Postfix
+A		          A
++	     +	      A
+B	     +	      AB
+*	     + *	  AB
+C	     + *	  ABC
+End		          ABC*+
+
+Postfix:
+ABC*+
+
+✅ Example with Brackets
+
+Infix:
+(A + B) * C
+
+Symbol	Stack	Postfix
+(	     (	
+A	     (	      A
++	     ( +	  A
+B	     ( +	  AB
+)	      	      AB+
+*	     *	      AB+
+C	     *        AB+C
+End		          AB+C*
+
+Postfix:
+AB+C*
+
+🔹 Infix → Prefix (Idea)
+
+Reverse infix.
+
+Replace ( with ) and vice-versa.
+
+Convert to postfix.
+
+Reverse postfix → prefix.
+
+🔹 Evaluation Using Stack
+Postfix Evaluation
+
+Scan left to right.
+
+If operand → push.
+
+If operator → pop two operands, perform operation, push result.
+
+Prefix Evaluation
+
+Scan right to left.
+
+Same steps.
+
+🔚 Conclusion
+Notation	Operator Position	Brackets Needed	Stack Use
+Infix	Middle	Yes	For conversion
+Prefix	Start	No	For evaluation
+Postfix	End	No	For evaluation
+
+👉 Infix is for humans
+👉 Prefix/Postfix is for computers (easy using stack)
+
+If you want, I can next give you the C++ code for infix → postfix exactly as asked in exams.

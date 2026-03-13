@@ -1,0 +1,233 @@
+Binary Trees – Notes
+1. Data Structure Types
+Linear Data Structures
+
+Elements are arranged in a single sequence.
+Examples: Arrays, Stacks, Queues, Linked Lists
+
+Non-Linear Data Structures
+
+Elements are arranged in a hierarchical structure.
+Example: Trees
+
+Example analogy: Computer folders inside folders.
+
+2. Binary Tree
+
+A Binary Tree is a hierarchical data structure where:
+Each node can have at most two children.
+
+These are called:
+
+Left Child
+
+Right Child
+
+Example structure:
+
+      A
+     / \
+    B   C
+   / \
+  D   E
+
+Node A → root
+Nodes B and C → children
+
+3. Basic Terminology in Trees
+Root
+
+The starting node of a tree.
+
+   A
+  / \
+ B   C
+
+A = Root
+
+Node
+
+Each element in the tree.
+Example: A, B, C, D, etc.
+
+Children
+
+Nodes directly below another node.
+
+   A
+  / \
+ B   C
+
+B and C = Children of A
+
+Parent
+
+A node that has children.
+
+   A
+  / \
+ B   C
+
+A = Parent of B and C
+
+Leaf Node
+
+A node with no children.
+
+      A
+     / \
+    B   C
+       / \
+      D   E
+
+Leaf nodes = B, D, E
+
+Subtree
+
+A node and all nodes below it form a subtree.
+
+      A
+     / \
+    B   C
+       / \
+      D   E
+
+Subtree of C
+
+   C
+  / \
+ D   E
+Ancestors
+
+All nodes above a node in the path to the root.
+
+      A
+     / \
+    B   C
+       /
+      D
+
+Ancestors of D: C, A
+
+4. Types of Binary Trees
+
+There are 5 main types.
+
+1. Full Binary Tree
+
+Definition: Every node has either 0 or 2 children.
+
+Valid Example:
+
+     A
+    / \
+   B   C
+      / \
+     D   E
+
+Invalid Example:
+
+     A
+    /
+   B
+
+Because node A has only one child.
+
+2. Complete Binary Tree
+
+Definition
+
+All levels are completely filled
+
+Except the last level
+
+Last level nodes must be as left as possible
+
+Valid Example:
+
+       A
+      / \
+     B   C
+    / \  /
+   D  E F
+
+Invalid Example:
+
+       A
+      / \
+     B   C
+        /
+       D
+
+Because nodes are not left aligned.
+
+3. Perfect Binary Tree
+
+Definition: All leaf nodes are at the same level.
+
+Example:
+
+        A
+       / \
+      B   C
+     / \ / \
+    D  E F  G
+
+Properties:
+
+Every internal node has 2 children
+
+All leaves at same depth
+
+4. Balanced Binary Tree
+
+Definition: Height of tree ≈ log₂(n) where n = number of nodes.
+
+Example (Balanced):
+
+      A
+     / \
+    B   C
+   / \
+  D   E
+
+Unbalanced example:
+
+A
+ \
+  B
+   \
+    C
+     \
+      D
+
+Balanced trees improve:
+
+Search efficiency
+
+Time complexity
+
+5. Degenerate (Skewed) Tree
+
+Definition: Every node has only one child.
+Structure becomes similar to a Linked List.
+
+Example:
+
+A
+ \
+  B
+   \
+    C
+     \
+      D
+
+or
+
+      A
+     /
+    B
+   /
+  C
+ /
+D

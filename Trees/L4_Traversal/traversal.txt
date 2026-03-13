@@ -1,0 +1,167 @@
+Tree Traversal – Notes
+Why Traversal is Needed
+
+To solve problems on trees, we must visit (traverse) all nodes.
+
+Two main traversal techniques:
+
+Depth First Search (DFS)
+
+Breadth First Search (BFS)
+
+1. Depth First Search (DFS)
+
+DFS explores the depth of the tree first before moving to the next branch.
+
+There are three types of DFS traversal:
+
+Inorder Traversal
+
+Preorder Traversal
+
+Postorder Traversal
+
+Example Tree
+        1
+       / \
+      2   3
+     / \  / \
+    4   5 6  7
+1️⃣ Inorder Traversal
+
+Rule:
+
+Left → Root → Right
+
+Steps:
+
+Go to extreme left
+
+Visit root
+
+Go to right subtree
+
+Example traversal:
+
+4 2 5 1 6 3 7
+
+Explanation:
+
+Left subtree → 4 2 5
+
+Root → 1
+
+Right subtree → 6 3 7
+
+2️⃣ Preorder Traversal
+
+Rule:
+
+Root → Left → Right
+
+Steps:
+
+Visit root
+
+Traverse left subtree
+
+Traverse right subtree
+
+Example traversal:
+
+1 2 4 5 3 6 7
+
+Explanation:
+
+Root → 1
+
+Left subtree → 2 4 5
+
+Right subtree → 3 6 7
+
+3️⃣ Postorder Traversal
+
+Rule:
+
+Left → Right → Root
+
+Steps:
+
+Traverse left subtree
+
+Traverse right subtree
+
+Visit root
+
+Example traversal:
+
+4 5 2 6 7 3 1
+
+Explanation:
+
+Left subtree → 4 5 2
+
+Right subtree → 6 7 3
+
+Root → 1
+
+Easy Trick to Remember
+Traversal	Rule	Root Position
+Preorder	Root Left Right	Root first
+Inorder	Left Root Right	Root middle
+Postorder	Left Right Root	Root last
+
+Memory trick:
+
+Pre → Root first
+In → Root in middle
+Post → Root last
+Another Example Tree
+            1
+          /   \
+         2     3
+        / \   /
+       4   5 6
+          /
+         8
+             \
+              7
+             / \
+            9  10
+Inorder
+4 2 8 5 1 6 3 9 7 10
+Preorder
+1 2 4 5 8 3 6 7 9 10
+Postorder
+4 8 5 2 6 9 10 7 3 1
+2. Breadth First Search (BFS)
+
+BFS traverses the tree level by level.
+
+It is also called Level Order Traversal.
+
+Example tree:
+
+        1
+       / \
+      2   3
+     / \ / \
+    4  5 6  7
+
+Traversal:
+
+1 2 3 4 5 6 7
+
+Steps:
+
+First visit root
+
+Then visit all nodes at level 1
+
+Then visit all nodes at level 2
+
+Difference Between DFS and BFS
+DFS	BFS
+Goes deep into subtree	Goes level by level
+Uses recursion or stack	Uses queue
+Types: Inorder, Preorder, Postorder	Level order traversal
